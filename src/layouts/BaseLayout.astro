@@ -64,19 +64,21 @@ const {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* nav button */
+/* NAV BUTTONS (tab items) */
 .bottom-nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 8px 4px 10px;
+
+  gap: 2px;                  /* smaller gap */
+  padding: 6px 4px 4px;      /* less vertical padding */
+  height: 100%;              /* fill the fixed nav height */
+
   font-size: 0.62rem;
   text-decoration: none;
   color: var(--muted);
   transition: all 0.18s ease;
-  position: relative;
   -webkit-tap-highlight-color: transparent;
 }
 

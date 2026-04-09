@@ -45,25 +45,72 @@ const {
     }
     .nav-share-btn span { width: 16px; height: 2px; background: var(--white); border-radius: 2px; }
 
-    /* ── BOTTOM NAV ── */
-    .bottom-nav {
-      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 100%; max-width: 420px;
-      background: rgba(14,14,14,0.95);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid var(--border);
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      z-index: 100;
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-    .bottom-nav a {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 10px 4px; font-size: 0.6rem; color: var(--muted);
-      text-decoration: none; gap: 4px; -webkit-tap-highlight-color: transparent; transition: color 0.15s;
-    }
-    .bottom-nav a .nav-icon { font-size: 1.2rem; line-height: 1; }
-    .bottom-nav a.active { color: var(--gold); }
-    .bottom-nav a:hover { color: var(--white); }
+    /* ── BOTTOM NAV (APP STYLE) ───────────────── */
+
+     .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 420px;
+  background: rgba(14,14,14,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* nav button */
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px 10px;
+  font-size: 0.62rem;
+  text-decoration: none;
+  color: var(--muted);
+  transition: all 0.18s ease;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* icon */
+.bottom-nav a .nav-icon {
+  font-size: 1.25rem;
+  transition: transform 0.18s ease;
+}
+
+/* hover tap feel */
+.bottom-nav a:active .nav-icon {
+  transform: scale(0.85);
+}
+
+/* ACTIVE TAB */
+.bottom-nav a.active {
+  color: var(--gold);
+}
+
+/* glowing active indicator */
+.bottom-nav a.active::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  width: 32px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* subtle hover */
+.bottom-nav a:hover {
+  color: var(--white);
+}
 
     /* ── PAYSTACK MODAL ── */
     #paystack-modal {

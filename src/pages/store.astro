@@ -1,0 +1,107 @@
+---
+// src/pages/store.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Digital Store | SA Life Hub"
+  description="Buy CV templates, freelance starter packs and business kits. Instant delivery via WhatsApp or email. Secure Paystack checkout."
+  activeNav="store"
+>
+
+  <div class="page-header">
+    <a href="/" class="back-btn" aria-label="Back to home">←</a>
+    <div class="page-header-text">
+      <h2>📦 Digital Store</h2>
+      <p>Instant delivery — pay with card or EFT</p>
+    </div>
+  </div>
+
+  <div class="section-hero green-tint">
+    <p style="font-size:0.78rem;color:var(--muted);">All products delivered to your WhatsApp or email within 5 minutes.</p>
+  </div>
+
+  <div class="store-grid">
+
+    <!-- CV Bundle -->
+    <div class="product-card">
+      <div class="product-thumb green-grad">📄</div>
+      <div class="product-body">
+        <h3>Professional CV Bundle</h3>
+        <p>3 modern CV templates + cover letter template. Editable on your phone via Canva. ATS-friendly for SA job applications.</p>
+        <ul class="product-includes">
+          <li>3 professionally designed CV templates</li>
+          <li>Cover letter template</li>
+          <li>Step-by-step completion guide</li>
+          <li>WhatsApp delivery in 5 minutes</li>
+        </ul>
+        <div class="product-footer">
+          <div class="price">R35 <sub>once-off</sub></div>
+          <button class="btn btn-gold" style="font-size:0.75rem;padding:9px 14px;" onclick="openPaystack('cv-bundle', 3500, 'Professional CV Bundle')">Buy Now →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Freelance Starter Pack -->
+    <div class="product-card">
+      <div class="product-thumb gold-grad">🚀</div>
+      <div class="product-body">
+        <h3>Freelance Starter Pack</h3>
+        <p>Everything you need to start freelancing in South Africa — profiles, scripts, pricing guides, and first-client templates.</p>
+        <ul class="product-includes">
+          <li>Fiverr profile template &amp; bio</li>
+          <li>Client pitch message scripts</li>
+          <li>Pricing guide (what to charge SA clients)</li>
+          <li>Invoice template (editable)</li>
+          <li>How to receive international payments</li>
+        </ul>
+        <div class="product-footer">
+          <div class="price">R79 <sub>once-off</sub></div>
+          <button class="btn btn-gold" style="font-size:0.75rem;padding:9px 14px;" onclick="openPaystack('freelance-pack', 7900, 'Freelance Starter Pack')">Buy Now →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Kit -->
+    <div class="product-card">
+      <div class="product-thumb blue-grad">🏢</div>
+      <div class="product-body">
+        <h3>Business Starter Kit</h3>
+        <p>Launch your small business in SA — from CIPC registration to your first social media posts.</p>
+        <ul class="product-includes">
+          <li>CIPC registration walkthrough PDF</li>
+          <li>Business name ideas worksheet</li>
+          <li>30-day social media content plan</li>
+          <li>Canva social media templates (x10)</li>
+          <li>Basic business plan template</li>
+          <li>WhatsApp Business setup guide</li>
+        </ul>
+        <div class="product-footer">
+          <div class="price">R129 <sub>once-off</sub></div>
+          <button class="btn btn-gold" style="font-size:0.75rem;padding:9px 14px;" onclick="openPaystack('biz-kit', 12900, 'Business Starter Kit')">Buy Now →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust signals -->
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;">
+      <div style="font-size:1.3rem;margin-bottom:10px;">🔒</div>
+      <div style="font-family:var(--font-head);font-weight:700;font-size:0.88rem;margin-bottom:6px;">Secure Checkout via Paystack</div>
+      <p style="font-size:0.75rem;color:var(--muted);line-height:1.55;">Pay safely by card, EFT, or Instant EFT. We never store your card details. Delivery within 5 minutes to your WhatsApp or email.</p>
+      <div style="display:flex;justify-content:center;gap:12px;margin-top:12px;font-size:0.7rem;color:var(--muted);">
+        <span>✓ Secure</span>
+        <span>✓ Instant</span>
+        <span>✓ SA-Based</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wa-cta" style="margin-top:8px;">
+    <strong>📲 Share the Digital Store</strong>
+    <p>Know someone who needs a CV or wants to start freelancing?</p>
+    <button class="btn btn-wa" onclick="shareWhatsApp('store')">💬 Share Store</button>
+  </div>
+
+  <div class="bottom-spacer"></div>
+</BaseLayout>
